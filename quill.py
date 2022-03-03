@@ -8,9 +8,11 @@ if 'user' in params and 'project' in params and 'assessment' in params:
     project=params['project']
     assessment=params['assessment']
     filename=f"{user}_{project}_{assessment}.html"
-    content=""
-    with open(filename, 'r') as f:
-        content=f.read()
+    try:
+        with open(filename, 'r') as f:
+            content=f.read()
+    except:
+        content=""
     out = st_quill(value=str(content),html=True)
     if out != content:
         with open(filename, 'w') as f:
