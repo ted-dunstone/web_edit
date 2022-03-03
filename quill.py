@@ -13,7 +13,7 @@ if 'user' in params and 'project' in params and 'assessment' in params:
             content=f.read()
     except:
         content=""
-    with st.form(k="my_form"):
+    with st.form(key="my_form"):
         out = st_quill(value=str(content),html=True)
         if st.form_submit_button("Save"):
             with open(filename, 'w') as f:
