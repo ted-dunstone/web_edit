@@ -15,7 +15,7 @@ if 'user' in params and 'project' in params and 'assessment' in params:
         content=""
     with st.form(key="my_form"):
         #out = st_quill(value=content,html=True)
-        out=st.text_area(content,key="my_textarea")
+        out=st.text_area("data",value=content,key="my_textarea")
         if st.form_submit_button("Save"):
             with open(filename, 'w') as f:
                 f.write(out)
